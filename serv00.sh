@@ -1176,7 +1176,7 @@ fi
 
 servkeep() {
 #green "开始安装Cron进程保活"
-curl -sSL https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/serv00keep.sh -o serv00keep.sh && chmod +x serv00keep.sh
+curl -sSL https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/serv00keep.sh -o serv00keep.sh && chmod +x serv00keep.sh
 sed -i '' -e "14s|''|'$UUID'|" serv00keep.sh
 sed -i '' -e "17s|''|'$vless_port'|" serv00keep.sh
 sed -i '' -e "18s|''|'$vmess_port'|" serv00keep.sh
@@ -1200,7 +1200,7 @@ fi
 green "开始安装多功能主页，请稍等……"
 keep_path="$HOME/domains/${snb}.${USERNAME}.serv00.net/public_nodejs"
 [ -d "$keep_path" ] || mkdir -p "$keep_path"
-curl -sL https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/app.js -o "$keep_path"/app.js
+curl -sL https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/app.js -o "$keep_path"/app.js
 sed -i '' "15s/name/$snb/g" "$keep_path"/app.js
 sed -i '' "37s/key/$UUID/g" "$keep_path"/app.js
 sed -i '' "52s/name/$USERNAME/g" "$keep_path"/app.js
@@ -1248,7 +1248,7 @@ if [[ -e $WORKDIR/config.json ]]; then
   COMMAND="sb"
   SCRIPT_PATH="$HOME/bin/$COMMAND"
   mkdir -p "$HOME/bin"
-  curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/serv00.sh > "$SCRIPT_PATH"
+  curl -Ls https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/serv00.sh > "$SCRIPT_PATH"
   chmod +x "$SCRIPT_PATH"
   if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
       echo "export PATH=\"\$HOME/bin:\$PATH\"" >> "$HOME/.bashrc"
@@ -1382,7 +1382,7 @@ else
 echo -e "当前 Serv00-sb-yg 脚本版本号：${purple}${latestV}${re}"
 yellow "未安装 Serv00-sb-yg 脚本！请先选择 1 安装"
 fi
-#curl -sSL https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/serv00.sh -o serv00.sh && chmod +x serv00.sh
+#curl -sSL https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/serv00.sh -o serv00.sh && chmod +x serv00.sh
    echo -e "========================================================="
    reading "请输入选择【0-7】: " choice
    echo
