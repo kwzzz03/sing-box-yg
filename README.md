@@ -67,7 +67,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb
 
 ### 方案一、Serv00-sb-yg本地专用一键脚本，快捷方式：```sb```
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/serv00.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/serv00.sh)
 ```
 
 ### Serv00-sb-yg脚本界面预览图（注：仅供围观）
@@ -86,7 +86,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/ser
 也可以手动放在其他目录，做好cron定时运行
 
 ```
-curl -sSL https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/kp.sh -o kp.sh && chmod +x kp.sh && nano kp.sh
+curl -sSL https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/kp.sh -o kp.sh && chmod +x kp.sh && nano kp.sh
 ```
 运行```bash kp.sh```可测试有效性 
 
