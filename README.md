@@ -36,11 +36,11 @@
 
 ### VPS专用一键脚本，快捷方式：```sb```
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/sb.sh)
 ```
 或者
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/kwzzz03/sing-box-yg/main/sb.sh)
 ```
 
 ### Sing-box-yg脚本界面预览图（注：相关参数随意填写，仅供围观）
