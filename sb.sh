@@ -411,7 +411,7 @@ red "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 green "四、自动生成各个协议统一的uuid (密码)"
 uuid=$(/etc/s-box/sing-box generate uuid)
 blue "已确认uuid (密码)：${uuid}"
-blue "已确认Vmess的path路径：${uuid}-vm"
+blue "已确认Vmess的path路径：/"
 }
 
 inssbjsonser(){
@@ -465,7 +465,7 @@ cat > /etc/s-box/sb10.json <<EOF
         ],
         "transport": {
             "type": "ws",
-            "path": "${uuid}-vm",
+            "path": "/",
             "max_early_data":2048,
             "early_data_header_name": "Sec-WebSocket-Protocol"    
         },
@@ -709,7 +709,7 @@ cat > /etc/s-box/sb11.json <<EOF
         ],
         "transport": {
             "type": "ws",
-            "path": "${uuid}-vm",
+            "path": "/",
             "max_early_data":2048,
             "early_data_header_name": "Sec-WebSocket-Protocol"    
         },
@@ -1049,10 +1049,10 @@ white "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 red "🚀【 vmess-ws(tls)+Argo 】临时节点信息如下(可选择3-8-3，自定义CDN优选地址)：" && sleep 2
 echo
 echo "分享链接【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argo'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argo'","type":"none","v":"2"}' | base64 -w 0)${plain}"
+echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argo'","id":"'$uuid'","net":"ws","path":"'/'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argo'","type":"none","v":"2"}' | base64 -w 0)${plain}"
 echo
 echo "二维码【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo 'vmess://'$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argo'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argo'","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws_argols.txt
+echo 'vmess://'$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argo'","id":"'$uuid'","net":"ws","path":"'/'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argo'","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws_argols.txt
 qrencode -o - -t ANSIUTF8 "$(cat /etc/s-box/vm_ws_argols.txt)"
 fi
 if [[ -n $(ps -e | grep -w $ym 2>/dev/null) ]]; then
@@ -1062,10 +1062,10 @@ white "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 red "🚀【 vmess-ws(tls)+Argo 】固定节点信息如下 (可选择3-8-3，自定义CDN优选地址)：" && sleep 2
 echo
 echo "分享链接【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argogd'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argogd'","type":"none","v":"2"}' | base64 -w 0)${plain}"
+echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argogd'","id":"'$uuid'","net":"ws","path":"'/'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argogd'","type":"none","v":"2"}' | base64 -w 0)${plain}"
 echo
 echo "二维码【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo 'vmess://'$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argogd'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argogd'","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws_argogd.txt
+echo 'vmess://'$(echo '{"add":"'$vmadd_argo'","aid":"0","host":"'$argogd'","id":"'$uuid'","net":"ws","path":"'/'","port":"8443","ps":"'vm-argo-$hostname'","tls":"tls","sni":"'$argogd'","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws_argogd.txt
 qrencode -o - -t ANSIUTF8 "$(cat /etc/s-box/vm_ws_argogd.txt)"
 fi
 echo
@@ -1073,10 +1073,10 @@ white "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 red "🚀【 vmess-ws 】节点信息如下 (建议选择3-8-1，设置为CDN优选节点)：" && sleep 2
 echo
 echo "分享链接【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"'$vm_port'","ps":"'vm-ws-$hostname'","tls":"","type":"none","v":"2"}' | base64 -w 0)${plain}"
+echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'/'","port":"'$vm_port'","ps":"'vm-ws-$hostname'","tls":"","type":"none","v":"2"}' | base64 -w 0)${plain}"
 echo
 echo "二维码【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo 'vmess://'$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"'$vm_port'","ps":"'vm-ws-$hostname'","tls":"","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws.txt
+echo 'vmess://'$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'/'","port":"'$vm_port'","ps":"'vm-ws-$hostname'","tls":"","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws.txt
 qrencode -o - -t ANSIUTF8 "$(cat /etc/s-box/vm_ws.txt)"
 else
 echo
@@ -1084,10 +1084,10 @@ white "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 red "🚀【 vmess-ws-tls 】节点信息如下 (建议选择3-8-1，设置为CDN优选节点)：" && sleep 2
 echo
 echo "分享链接【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"'$vm_port'","ps":"'vm-ws-tls-$hostname'","tls":"tls","sni":"'$vm_name'","type":"none","v":"2"}' | base64 -w 0)${plain}"
+echo -e "${yellow}vmess://$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'/'","port":"'$vm_port'","ps":"'vm-ws-tls-$hostname'","tls":"tls","sni":"'$vm_name'","type":"none","v":"2"}' | base64 -w 0)${plain}"
 echo
 echo "二维码【v2rayn、v2rayng、nekobox、小火箭shadowrocket】"
-echo 'vmess://'$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'$ws_path'","port":"'$vm_port'","ps":"'vm-ws-tls-$hostname'","tls":"tls","sni":"'$vm_name'","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws_tls.txt
+echo 'vmess://'$(echo '{"add":"'$vmadd_are_local'","aid":"0","host":"'$vm_name'","id":"'$uuid'","net":"ws","path":"'/'","port":"'$vm_port'","ps":"'vm-ws-tls-$hostname'","tls":"tls","sni":"'$vm_name'","type":"none","v":"2"}' | base64 -w 0) > /etc/s-box/vm_ws_tls.txt
 qrencode -o - -t ANSIUTF8 "$(cat /etc/s-box/vm_ws_tls.txt)"
 fi
 white "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -1282,7 +1282,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$vm_name"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1346,7 +1346,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argogd"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1373,7 +1373,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argogd"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1400,7 +1400,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argo"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1427,7 +1427,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argo"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1592,7 +1592,7 @@ proxies:
   network: ws
   servername: $vm_name                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $vm_name                     
 
@@ -1633,7 +1633,7 @@ proxies:
   network: ws
   servername: $argogd                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argogd
 
@@ -1650,7 +1650,7 @@ proxies:
   network: ws
   servername: $argogd                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argogd
 
@@ -1666,7 +1666,7 @@ proxies:
   network: ws
   servername: $argo                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argo
 
@@ -1682,7 +1682,7 @@ proxies:
   network: ws
   servername: $argo                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argo 
 
@@ -1889,7 +1889,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$vm_name"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1953,7 +1953,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argo"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -1980,7 +1980,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argo"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -2143,7 +2143,7 @@ proxies:
   network: ws
   servername: $vm_name                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $vm_name                     
 
@@ -2192,7 +2192,7 @@ proxies:
   network: ws
   servername: $argo                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argo
 
@@ -2208,7 +2208,7 @@ proxies:
   network: ws
   servername: $argo                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argo 
 
@@ -2408,7 +2408,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$vm_name"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -2472,7 +2472,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argogd"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -2499,7 +2499,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$argogd"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -2662,7 +2662,7 @@ proxies:
   network: ws
   servername: $vm_name                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $vm_name                     
 
@@ -2709,7 +2709,7 @@ proxies:
   network: ws
   servername: $argogd                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argogd
 
@@ -2725,7 +2725,7 @@ proxies:
   network: ws
   servername: $argogd                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $argogd
 
@@ -2923,7 +2923,7 @@ cat > /etc/s-box/sing_box_client.json <<EOF
                         "$vm_name"
                     ]
                 },
-                "path": "$ws_path",
+                "path": "/",
                 "type": "ws"
             },
             "type": "vmess",
@@ -3121,7 +3121,7 @@ proxies:
   network: ws
   servername: $vm_name                    
   ws-opts:
-    path: "$ws_path"                             
+    path: "/"                             
     headers:
       Host: $vm_name                     
 
