@@ -269,7 +269,7 @@ echo
 blue "Vless-reality的SNI域名默认为 www.yahoo.com"
 blue "Vmess-ws将关闭TLS，Hysteria-2、Tuic-v5将使用bing自签证书，并关闭SNI证书验证"
 tlsyn=false
-ym_vm_ws=www.bing.com
+ym_vm_ws=sdeweb.hkcsl.com
 certificatec_vmess_ws='/etc/s-box/cert.pem'
 certificatep_vmess_ws='/etc/s-box/private.key'
 certificatec_hy2='/etc/s-box/cert.pem'
